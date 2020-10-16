@@ -1,4 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+
+import ContactPerson from './ContactPerson';
 
 @Entity('type_contacts')
 class TypeContact {
@@ -7,6 +9,9 @@ class TypeContact {
 
     @Column()
     name: string;
+
+    @OneToMany(() => ContactPerson, contact_person => contact_person.type_contact)
+    contact_person: ContactPerson[];
 }
 
 export default TypeContact;
