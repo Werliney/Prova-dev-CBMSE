@@ -4,6 +4,7 @@ import { getCustomRepository } from 'typeorm';
 import PersonRepository from '../repositories/PersonRepository';
 import CreatePersonService from '../services/CreatePersonService';
 
+
 const personRouter = Router();
 
 personRouter.get('/', async (request, response) => {
@@ -29,6 +30,7 @@ personRouter.post('/', async (request, response) => {
         return response.json({ error: 'Falha na criação de uma nova pessoa'});
     }
 });
+
 
 
 export default personRouter;

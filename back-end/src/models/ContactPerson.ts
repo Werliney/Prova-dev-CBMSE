@@ -15,14 +15,14 @@ class ContactPerson {
     @Column()
     person_id: string;
 
-    @ManyToOne(() => Person)
+    @ManyToOne(() => Person, { cascade: true })
     @JoinColumn({name: 'person_id'})
     person: Person;
 
     @Column()
     type_contact_id: string;
 
-    @ManyToOne(() => TypeContact)
+    @ManyToOne(() => TypeContact, {cascade: true })
     @JoinColumn({name: 'type_contact_id'})
     type_contact: TypeContact;
 }
