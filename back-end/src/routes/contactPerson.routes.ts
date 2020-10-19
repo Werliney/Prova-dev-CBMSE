@@ -10,7 +10,7 @@ const contactPersonRouter = Router();
 contactPersonRouter.get('/', async (request, response) => {
     const contactPersonRepository = getCustomRepository(ContactPersonRepository);
 
-    const contacts = await contactPersonRepository.find({ relations: ["type_contact"]});
+    const contacts = await contactPersonRepository.find({ relations: ["type_contact", "person"]});
 
     return response.json(contacts);
 });
@@ -54,13 +54,13 @@ contactPersonRouter.put('/:person_id', async (request, response) => {
     
 });
 
-contactPersonRouter.delete('/:person_id', async (request, response) => {
-    const { person_id } = request.params;
+contactPersonRouter.delete('/:id', async (request, response) => {
+    const { id } = request.params;
 
     const contactPersonRepository = getCustomRepository(ContactPersonRepository);
 
 
-    await contactPersonRepository.delete(person_id);
+    await contactPersonRepository.delete(id);
 
     return response.status(204).send();
 });

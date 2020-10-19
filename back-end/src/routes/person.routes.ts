@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { request, Router } from 'express';
 import { getCustomRepository } from 'typeorm';
 
 import PersonRepository from '../repositories/PersonRepository';
@@ -29,6 +29,27 @@ personRouter.post('/', async (request, response) => {
     } catch (error) {
         return response.json({ error: 'Falha na criação de uma nova pessoa'});
     }
+});
+
+personRouter.delete('/:id', async(request, response) => {
+
+    try {
+        
+        const { id } = request.params;
+
+        const personRepository = getCustomRepository(PersonRepository);
+
+
+        await personRepository.delete(id);
+
+        return response.status(204).send();
+
+    } catch (error) {
+        
+        return response.json({ error: 'Falha na remoção da pessoa'});
+    }
+
+    
 });
 
 
