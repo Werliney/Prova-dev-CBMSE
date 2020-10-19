@@ -44,3 +44,4 @@ O desafio será avaliado através dos seguintes critérios.
 - Depois que dar o git clone no repositório, entre nas pastas back-end e front-end e execute o comando "yarn", assim será baixado as depêndencias necessárias.
 - O projeto utilizou um container docker com a imagem do postgres, no arquivo "ormconfig.json" é onde têm as configurações para conectar ao banco.
 - Depois de conectado a um banco, rode no back end o comando "yarn typeorm migration:run", que será executado as migrations do banco de dados.
+- Para rodar o back-end utilize o comando "yarn dev:server" e espere a mensagém "Server subiu", e pra rodar o front-end execute o comando "yarn start"
