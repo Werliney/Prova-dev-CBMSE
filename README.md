@@ -37,3 +37,10 @@ O desafio será avaliado através dos seguintes critérios.
  - As mensagens de commit são claras?
 
 # Duvidas: jonas.nascimento@cbm.se.gov.br ou abrir uma issue
+
+
+# Como rodar :
+- O projeto utiliza o gerenciador de pacotes yarn
+- Depois que dar o git clone no repositório, entre nas pastas back-end e front-end e execute o comando "yarn", assim será baixado as depêndencias necessárias.
+- O projeto utilizou um container docker com a imagem do postgres, no arquivo "ormconfig.json" é onde têm as configurações para conectar ao banco.
+- Depois de conectado a um banco, rode no back end o comando "yarn typeorm migration:run", que será executado as migrations do banco de dados.
