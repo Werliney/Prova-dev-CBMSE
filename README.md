@@ -40,7 +40,8 @@ O desafio será avaliado através dos seguintes critérios.
 
 
 # Como rodar :
-- O projeto utiliza o gerenciador de pacotes yarn
+- O projeto utiliza o gerenciador de pacotes yarn, então é necessário baixar.
+- Vá até o site https://nodejs.org/en/, e baixe a versão LTS do Node.js (recomendo baixar com os gerenciadores de pacotes de cada sistema operacional, no site tem o tutorial)
 - Depois que dar o git clone no repositório, entre nas pastas back-end e front-end e execute o comando "yarn", assim será baixado as depêndencias necessárias.
 - O projeto utilizou um container docker com a imagem do postgres, no arquivo "ormconfig.json" é onde têm as configurações para conectar ao banco.
 - Depois de conectado a um banco, rode no back end o comando "yarn typeorm migration:run", que será executado as migrations do banco de dados.
